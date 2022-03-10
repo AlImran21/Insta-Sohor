@@ -27,7 +27,9 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-    return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  console.log(text);
+    // return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+    return text.length < 30 ? text + "<span class='fw-bold'>... read more</span>": text.slice(0, 30) + "<span class='fw-bold'>... read more</span>" ;
 };
 
 const switchTab = (id) => {
@@ -156,6 +158,7 @@ const displayReportedPosts = () => {
 
 const loadPosts = async () =>{
   let data = await fetch('../data/posts.json');
+  // console.log(data);
   posts = await data.json();
   showPosts(posts);
 }
