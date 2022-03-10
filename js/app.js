@@ -158,7 +158,7 @@ const displayReportedPosts = () => {
 
 const loadPosts = async () =>{
   let data = await fetch('../data/posts.json');
-  // console.log(data);
+  console.log(data);
   posts = await data.json();
   showPosts(posts);
 }
